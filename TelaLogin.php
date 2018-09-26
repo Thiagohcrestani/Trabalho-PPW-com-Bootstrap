@@ -61,7 +61,7 @@
       <label for="inputPassword"  class="sr-only">Senha</label>
       <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha" required>
 	  <br>
-
+	</div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
     </form>
   </body>
