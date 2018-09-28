@@ -23,37 +23,39 @@ $result	 = mysql_query($sql);
  --> </head>
 
  <body background="Fundo.jpg">
-    <form name="pagina" method="post" action="UpdateUsuario.php" onsubmit="return ValidaCPF();" >
-      <table class="painel" align="center"  width=600 border=1>
-			<tr>
-			    <td bgcolor="" colspan=2 width=600><center><b>EDITAR USUÁRIO</b></center></td>
-			</tr>
-			<tr>
-				<td><input type="hidden" name="id" value="<?php echo mysql_result($result,0,'id_usuario')?>"></td> 
-			</tr>
-			<tr>
-				<td bgcolor="" width=100><b>Nome</b>:</td>
-				<td width=500><input type="text"  name="nome"  size="60" value="<?php echo mysql_result($result,0,'nome_usuario')?>"></td>
-			</tr>
-			<tr>
-				<td bgcolor="" width=100><b>Cpf</b>:</td>
-				<td width=500><input type="number" id="cpf"  name="cpf"  size="23" value="<?php echo mysql_result($result,0,'cpf_usuario')?>" onchange="verificaCpf(); ValidaCPF();">
-				&nbsp;<b>Rg:</b><input type="number"  name="rg" value="<?php echo mysql_result($result,0,'rg_usuario')?>"  size="23"></td>
-			</tr>
-			<tr>
-				<td bgcolor="" width=100><b>Logradouro</b>:</td>
-				<td width=500><input type="text" value="<?php echo mysql_result($result,0,'endereco_usuario')?>"  name="logradouro">
-				&nbsp;<b>Número:</b><input type="number"  name="num" value="<?php echo mysql_result($result,0,'num_usuario')?>"  maxlength=4></td>
-			</tr>
-			<tr>
-			    <td bgcolor="" width=100><b>Bairro</b>:</td>
-				<td width=500><input type="text" " name="bairro" value="<?php echo mysql_result($result,0,'bairro_usuario')?>"  size="20">	
-				<b>Cep:</b><input type="text"  name="cep" value="<?php echo mysql_result($result,0,'cep_usuario')?>" size="25"></td>
-			</tr>
-			<tr>
-				<td width=100><b>Cidade:</b></td>
-				<td width=500><input type="text" value="<?php echo mysql_result($result,0,'cidade_usuario')?>"  name="cidade" size="30">
-				<b>Estado:</b><select style="width: 80px;" value="<?php echo mysql_result($result,0,'uf_usuario')?>" name="estado">
+ <center>
+    <div class="row">
+   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
+    <form class="painel col-lg-8 col-xs-12" name="pagina" method="post" action="UpdateUsuario.php" onsubmit="return ValidaCPF();" >
+		<div class="row">
+				<input type="hidden" name="id" value="<?php echo mysql_result($result,0,'id_usuario')?>">
+			    <div bgcolor="" class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  ><font color="white"><center><b>EDITAR USUÁRIO</b></center></font></div>
+	
+	
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" ><font color="white"><b>Nome</b>:<br></font>
+				<input class="form-control" type="text" name="nome" value="<?php echo mysql_result($result,0,'nome_usuario')?>"></div>
+			
+				<div  class="col-lg-4 col-md-4 col-sm-4 col-xs-12" ><font color="white"><b>Cpf</b>:<br></font>
+				<input class="form-control" type="number" id="cpf"  name="cpf" onchange="verificaCpf(); ValidaCPF();" value="<?php echo mysql_result($result,0,'cpf_usuario')?>"></div>
+
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>Rg:<br></b></font><input class="form-control" type="number" name="rg" value="<?php echo mysql_result($result,0,'rg_usuario')?>"></div>
+			
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>Logradouro</b>:<br></font>
+				<input class="form-control" type="text"  name="logradouro" value="<?php echo mysql_result($result,0,'endereco_usuario')?>"></div>
+
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>Número:<br></b></font><input class="form-control" type="number" name="num"  maxlength=4 value="<?php echo mysql_result($result,0,'num_usuario')?>"></div>
+		
+			    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>Bairro</b>:<br></font>
+				<input class="form-control" name="bairro" type="text" value="<?php echo mysql_result($result,0,'bairro_usuario')?>"></div>
+
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>Cep:<br></b></font><input class="form-control" type="text" name="cep"
+				value="<?php echo mysql_result($result,0,'cep_usuario')?>"></div>
+			
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>Cidade:<br></b></font>
+				<input type="text" class="form-control" name="cidade" value="<?php echo mysql_result($result,0,'cidade_usuario')?>" ></div>
+
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>Estado:<br></b></font><select style="width: 150px;" name="estado" 
+				value="<?php echo mysql_result($result,0,'uf_usuario')?>">
 											<option value="AC"  <?php if(mysql_result($result, 0, 'uf_usuario')=="AC"){echo " selected ";}?>>Acre</option>
 											<option value="AL" <?php if(mysql_result($result, 0, 'uf_usuario')=="AL"){echo " selected ";}?>>Alagoas</option>
 											<option value="AP" <?php if(mysql_result($result, 0, 'uf_usuario')=="AP"){echo " selected ";}?>>Amapá</option>
@@ -82,32 +84,42 @@ $result	 = mysql_query($sql);
 											<option value="SE" <?php if(mysql_result($result, 0, 'uf_usuario')=="SE"){echo " selected ";}?>>Sergipe</option>
 											<option value="TO" <?php if(mysql_result($result, 0, 'uf_usuario')=="TO"){echo " selected ";}?>>Tocantins</option>
 									</select>
-				</td>
-			</tr>
-			<tr>
-			    <td bgcolor="" width=100><b>Login</b>:</td>
-				<td width=500><input type="text" " name="login" size="20" value="<?php echo mysql_result($result,0,'login_usuario')?>">
-			<tr>
-				<tr>
-			    <td bgcolor="" width=100><b>Nível:</b></td>
-				<td width=500><input type="radio"  name="nivel" value="0" <?php if(mysql_result($result, 0 , 'nivel_usuario')=='0'){echo 'checked';}?>>0
-				&nbsp;<input type="radio" name="nivel" value="1" <?php if(mysql_result($result, 0 , 'nivel_usuario')=='1'){echo 'checked';}?>>1
-				&nbsp;<input type="radio"  name="nivel" value="2" <?php if(mysql_result($result, 0 , 'nivel_usuario')=='2'){echo 'checked';}?>>2
-				<input type="radio" name="nivel" value="3" <?php if(mysql_result($result, 0 , 'nivel_usuario')=='3'){echo 'checked';}?>>3
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Status:</b><select style="width: 80px;" name="status"
+				</div>
+			
+			    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>E-mail</b>:<br></font>
+				<input class="form-control" type="mail" name="email" value="<?php echo mysql_result($result,0,'email_usuario')?>"></div>
+			
+			    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>Login</b>:<br></font>
+				<input class="form-control" type="text" name="login" value="<?php echo mysql_result($result,0,'login_usuario')?>"></div>
+			    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+			    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>Nível:<br></b></font>
+				<input type="radio"  name="nivel" checked value="0" <?php if(mysql_result($result, 0 , 'nivel_usuario')=='0'){echo 'checked';}?>><font color="white">0</font>
+				<input type="radio" name="nivel" value="1" <?php if(mysql_result($result, 0 , 'nivel_usuario')=='1'){echo 'checked';}?>><font color="white">1</font>
+				<input type="radio"  name="nivel" value="2" <?php if(mysql_result($result, 0 , 'nivel_usuario')=='2'){echo 'checked';}?>><font color="white">2</font>
+				<input type="radio"  name="nivel" value="3" <?php if(mysql_result($result, 0 , 'nivel_usuario')=='3'){echo 'checked';}?>><font color="white">3</font></div>
+				
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>Status:<br></b></font><select style="width: 150px;" name="status"
 				value="<?php echo mysql_result($result,0,'status_usuario')?>">
 					<option value="A" <?php if(mysql_result($result, 0, 'status_usuario')=="A"){echo " selected ";}?>>Ativo</option>
 					<option value="I" <?php if(mysql_result($result, 0, 'status_usuario')=="I"){echo " selected ";}?>>Inativo</option>
-				</td>
-			</tr>
-			<tr>
-                <td bgcolor="" colspan=2 width=600><center>&nbsp;</center></td>
-			</tr>
-			<tr>
-                <td bgcolor="" colspan=2 width=600><center><input type="submit" name="submit" value="Salvar" ></center></td>
-			</tr>
- 	  </table>
+				</select>
+				</div>
+			<br>
+			<br>
+			<br>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" bgcolor=""><input class="btn btn-primary btn-lg"" type="submit" name="submit" value="Salvar" ></div>
+				<br>
+				<br>
+				<br>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" bgcolor=""><input type="button" onclick="window.location.href='index_menu.php'" class="btn btn-danger btn-lg" name="cancelar" value="Cancelar" ></div>
+			<br>
+			<br>
+			<br>
+		</div>
 	</form>
+</div>
+</center>
  </body>
 
 	<script>

@@ -16,7 +16,7 @@ include('seguranca.php');
   <!--<link href="style.css" rel="stylesheet" type="text/css" />
   <!-- Optional JavaScript -->
 			<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-			<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+			<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->	
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	        <!--<link href="style.css" rel="stylesheet" type="text/css" />
@@ -32,39 +32,37 @@ include('seguranca.php');
 
  </head>
 
- <body background="Fundo.jpg">
+ <body class="imagem">
    <?php
 	include("include/menu.php");
   ?>
-   <center><img src="usuario.png" width="100" height="100" alt="Usuário"></center>
-    <form name="pagina" method="post" action="ValidaUsuario.php" onsubmit="return ValidaCPF();" style="margin-left:30%; margin-right:30%;">
-      <table class="table table-borderless table-sm painel" align="center"  width= border=1 style="font-size:2;">
-			<tr> 
-			    <td bgcolor="" colspan=2 width=><font color="white"><center><b>CADASTRO USUÁRIO</b></center></font></td>
-			</tr>
-			<tr>
-				<td width="10%" height="10%"><font color="white"><b>Nome</b>:</td></font>
-				<td width="70%" height="10%"><input type="text"  name="nome"  size="60"></td>
-			</tr>
-			<tr>
-				<td bgcolor="" width=><font color="white"><b>Cpf</b>:</td></font>
-				<td width=><input type="number" id="cpf"  name="cpf"  size="23" onchange="verificaCpf(); ValidaCPF();">
-				&nbsp;<font color="white"><b>Rg:</b></font><input type="number"  name="rg"  size="23"></td>
-			</tr>
-			<tr>
-				<td bgcolor="" width=><font color="white"><b>Logradouro</b>:</font></td>
-				<td width=><input type="text"  name="logradouro" >
-				&nbsp;<font color="white"><b>Número:</b></font><input type="number"  name="num"  maxlength=4></td>
-			</tr>
-			<tr>
-			    <td bgcolor="" width=><font color="white"><b>Bairro</b>:</font></td>
-				<td width=><input type="text" " name="bairro"  size="20">	
-				<font color="white"><b>Cep:</b></font><input type="text"  name="cep"  size="25"></td>
-			</tr>
-			<tr>
-				<td width=><font color="white"><b>Cidade:</b></font></td>
-				<td width=><input type="text"  name="cidade" size="30">
-				<font color="white"><b>Estado:</b></font><select style="width: 80px;" name="estado">
+   <center><img src="usuario.png" width="100" height="100" alt="Usuário">
+   <div class="row">
+   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
+    <form class="painel col-lg-8 col-xs-12 form-group" name="pagina" method="post" action="ValidaUsuario.php" onsubmit="return ValidaCPF();" >
+		<div class="row form-group" style="margin-left:2px; margin-right:2px;" >
+
+			    <div bgcolor="" class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  ><font color="white"><center><b>CADASTRO USUÁRIO</b></center></font></div>
+	
+	
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" ><font color="white"><b>Nome</b>:<br></font>
+				<input type="text" name="nome" class="form-control"></div>
+			
+				<div  class="col-lg-4 col-md-4 col-sm-4 col-xs-12" ><font color="white"><b>Cpf</b>:<br></font>
+				<input class="form-control"  type="number" id="cpf"  name="cpf" onchange="verificaCpf(); ValidaCPF();"></div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>Rg:<br></b></font><input class="form-control" size="28" type="number" name="rg"></div>
+			
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>Logradouro</b>:<br></font>
+				<input size="28" type="text" class="form-control" name="logradouro" ></div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>Número:<br></b></font><input class="form-control" size="28" type="number" name="num"  maxlength=4></div>
+		
+			    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>Bairro</b>:<br></font>
+				<input size="28" class="form-control" name="bairro" type="text"></div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>Cep:<br></b></font><input size="28" class="form-control" type="text" name="cep" ></div>
+			
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>Cidade:<br></b></font>
+				<input type="text" class="form-control" name="cidade" size="28" ></div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>Estado:<br></b></font><select style="width: 150px;" name="estado">
 											<option value="AC">Acre</option>
 											<option value="AL">Alagoas</option>
 											<option value="AP">Amapá</option>
@@ -93,31 +91,43 @@ include('seguranca.php');
 											<option value="SE">Sergipe</option>
 											<option value="TO">Tocantins</option>
 									</select>
-				</td>
-			</tr>
-			<tr>
-			    <td bgcolor="" width=><font color="white"><b>Login</b>:</font></td>
-				<td width=><input type="text" " name="login" size="20">
-			    <font color="white"><b>Senha</b>:</font>
-				<input type="password" name="senha" size="20"></td>
-			</tr>
-			<tr>
-				<tr>
-			    <td bgcolor="" width=><font color="white"><b>Nível:</b></font></td>
-				<td width=><input type="radio"  name="nivel" checked value="0"><font color="white">0
-				&nbsp;<input type="radio" name="nivel" value="1"><font color="white">1</font>
-				&nbsp;<input type="radio"  name="nivel" value="2"><font color="white">2</font>
-				<input type="radio"  name="nivel" value="3"><font color="white">3</font>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="white"><b>Status:</b>&nbsp;&nbsp;</font><select style="width: 80px;" name="status">
+				</div>
+			
+			    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>E-mail</b>:<br></font>
+				<input size="28" class="form-control" type="mail" name="email" ></div>
+			
+			    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>Login</b>:<br></font>
+				<input size="28" type="text" class="form-control"name="login" ></div>
+			    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>Senha</b>:<br></font>
+				<input size="28" type="password" class="form-control" name="senha" ></div>
+			
+				
+			    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>Nível:<br></b></font>
+				<input type="radio"  name="nivel" checked value="0"><font color="white">0</font>
+				<input type="radio" name="nivel" value="1"><font color="white">1</font>
+				<input type="radio"  name="nivel" value="2"><font color="white">2</font>
+				<input type="radio"  name="nivel" value="3"><font color="white">3</font></div>
+				
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><font color="white"><b>Status:<br></b></font><select style="width: 150px;" name="status">
 					<option value="A">Ativo</option>
 					<option value="I">Inativo</option>
-				</td>
-			</tr>
-			<tr>
-                <td bgcolor="" colspan=2 width=><center><input type="submit" name="submit" value="Salvar" ></center></td>
-			</tr>
- 	  </table>
+				</select>
+				</div>
+			<br>
+			<br>
+			<br>
+				 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" bgcolor=""><input type="button" onclick="window.location.href='index_menu.php'" class="btn btn-danger btn-lg" name="cancelar" value="Cancelar" ></div>
+				<br>
+				<br>
+				<br>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" bgcolor=""><input class="btn btn-primary btn-lg" type="submit" name="salvar" value="Salvar" ></div>				
+			<br>
+			<br>
+			<br>
+		</div>
 	</form>
+</div>
+	</center>
  </body>
  <style>
  .painel{
@@ -126,6 +136,10 @@ background: linear-gradient(to bottom, rgba(101, 102, 103 ,1.0) 0%,rgba(44,80,10
 border-radius: 20px;
 
 
+}
+.imagem {
+  background-image: url(Fundo.jpg);
+  background-size: cover;
 }
  </style>
 

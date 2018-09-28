@@ -8,7 +8,7 @@
 ?>
 	<head>
 	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1>
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
@@ -49,20 +49,26 @@
 	}
 -->
 </script>
-	<body background="Fundo.jpg">
+<body background="">
+	
+<div style="margin: auto">
+	<form name="form1" action="ValidaLogin.php" method="post" onsubmit="return valida();" >
+	  	<div> 
+			<img class="mb-4" src="logo.png" alt="" width="250">
+		    <label class="sr-only">Login</label>
+            <input type="text" id="login" name="login" class="form-control" placeholder="Login" required autofocus>
+	        <br>
+            <label for="inputPassword"  class="sr-only">Senha</label>
+            <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha" required>
+	        <br>
+	    </div>
+             <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+	      <br>
+		<div class="forgot">
+             <a href="RecuperaSenha.php">Esqueceu a Senha?</a>
+        </div>
 
-	<form name="form1" action="ValidaLogin.php" method="post" onsubmit="return valida();" style="margin-left:35%; margin-right:30%;">
-	<div> 
-      <center><img class="mb-4" src="logo.png" alt="" width="300" height="100"></center>
-      <h1 class="h3 mb-3 font-weight-normal">Insira Login e Senha Para Continuar</h1>
-      <label class="sr-only">Login</label>
-      <input type="text" id="login" name="login" class="form-control" placeholder="Login" required autofocus>
-	  <br>
-      <label for="inputPassword"  class="sr-only">Senha</label>
-      <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha" required>
-	  <br>
-	</div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
-    </form>
-  </body>
+    </form>	
+</div>
+</body>
 </html>

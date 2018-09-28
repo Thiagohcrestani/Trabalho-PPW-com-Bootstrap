@@ -22,7 +22,7 @@ function slide1(){
 document.getElementById('id').src="img/img1.jpg";
 setTimeout("slide2()", 3000)
 }
-  
+	
 function slide2(){
 document.getElementById('id').src="img/img2.jpg";
 setTimeout("slide3()", 3000)
@@ -53,7 +53,9 @@ setTimeout("slide1()", 3000)
   ?>
 <div style="margin-top:5%; box-schadow:0px 1px 3px rgba(35,57,64,0.5),inset 0px 1px 3px rgba(209,209,209,0.7)">
 <center>
-	<img height=400 id="id"/>
+<div style=" padding-left:5%; padding-right:5%;">
+	<img class="img-fluid"   height=400 id="id"/>
+</div>
 </center>
 </div>
 </body>

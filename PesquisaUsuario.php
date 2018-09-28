@@ -36,30 +36,36 @@ include('seguranca.php');
   ?>
 
    <center><img src="usuario.png" width="100" height="100" alt="Usuário"></center>
-	<form style="margin-left:30%; margin-right:30%;">
-      <table class="table table-borderless table-sm painel" id="pesquisa" align="center" border=0>
-			<tr>
-			    <td Colspan=2><center><font color="white"><b>EDITAR USUÁRIO</b></font></center></td>
-			</tr>
-			<tr>
-				<td><font color="white"><b>PESQUISAR</b>:</font></td>
-				<td><input type="text"  id="busca" onkeyup="buscarNoticias(this.value)" name="text" pattern="[A-z\s]+$" size="60"></td>
-				
-				<br>
-				<div id="conteudo"></div>
-			</tr>	
-			<td colspan=2>
-			 <div id="resultado"></div>
-			</td>
-	  </table>
-	 </form>
+   <div class="row" style="margin-left:2px; margin-right:2px;">
+    <div class="col-lg-3 col-md-2 col-sm-2 col-xs-0"></div>
+	<div class="painel col-lg-6 col-md-8 col-sm-8 col-xs-12" id="pesquisa">
+	<center>
+		<div class="row">	
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ><font color="white"><center><b>EDITAR USUÁRIO</b></center></font></div>
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>	
+			<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"><font color="white"><b>Pesquisar </b>:</font>
+			
+			<input type="text" class="form-control" name="nome" size="28" id="busca" onkeyup="buscarNoticias(this.value)"></div>
+			<br>
+			<br>
+			<br>
+		</div>
+		<div id="conteudo"></div>
+		<div id="resultado"></div>
+		<br>
+		<br>
+			
+	</center>
+	 </div>
+	 </div>
+</div>
 	  <div id="divEdit"> </div>
  </body>
  <style>
  .painel{
 
 background: linear-gradient(to bottom, rgba(101, 102, 103 ,1.0) 0%,rgba(44,80,107,0.6) 100%);
-border-radius: 20px;
+border-radius: 10px;
 
 
 }

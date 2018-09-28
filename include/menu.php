@@ -20,7 +20,7 @@
           Relatórios
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="rel_usu.php">Relatório de Usuários</a>
+          <a class="dropdown-item" href="relusu.php">Relatório de Usuários</a>
         </div>
     </ul>
   </div>

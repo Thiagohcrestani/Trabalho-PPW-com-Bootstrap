@@ -15,6 +15,7 @@
 	cep_usuario = '{$_POST['cep']}', 
 	cidade_usuario = '{$_POST['cidade']}',
 	uf_usuario = '{$_POST['estado']}', 
+	email_usuario = '{$_POST['email']}',
 	login_usuario = '{$_POST['login']}',
 	nivel_usuario = '{$_POST['nivel']}',
 	status_usuario = '{$_POST['status']}'
