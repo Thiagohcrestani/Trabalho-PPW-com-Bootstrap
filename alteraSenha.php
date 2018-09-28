@@ -65,9 +65,9 @@ function verificaSenha(){
       <label class="sr-only">Nova Senha</label>
       <input type="password" id="senhan1" name="senhan1" class="form-control" placeholder="Nova Senha" required autofocus>
 	  <br>
-      <label for="inputPassword"  class="sr-only">Repita Nova Senha</label>
+      <label for="inputPassword"  class="sr-only">Confirme Nova Senha</label>
       <input type="password" name="senhan2" id="senhan2" class="form-control" placeholder="Repita Nova Senha" required>
-	  <br>
+	  <br>		
 	</div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Redefinir Senha</button>
     </form>

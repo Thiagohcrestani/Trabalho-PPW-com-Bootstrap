@@ -11,7 +11,7 @@ include('seguranca.php');
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title> MPD </title>
+  <title> MENU </title>
   <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
   <!--<link href="style.css" rel="stylesheet" type="text/css" />
   <!-- Optional JavaScript -->
@@ -116,11 +116,11 @@ include('seguranca.php');
 			<br>
 			<br>
 			<br>
-				 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" bgcolor=""><input type="button" onclick="window.location.href='index_menu.php'" class="btn btn-danger btn-lg" name="cancelar" value="Cancelar" ></div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" bgcolor=""><input class="btn btn-primary btn-lg" type="submit" name="salvar" value="Salvar" ></div>	
 				<br>
 				<br>
 				<br>
-				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" bgcolor=""><input class="btn btn-primary btn-lg" type="submit" name="salvar" value="Salvar" ></div>				
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" bgcolor=""><input type="button" onclick="window.location.href='index_menu.php'" class="btn btn-danger btn-lg" name="cancelar" value="Cancelar" ></div>		
 			<br>
 			<br>
 			<br>

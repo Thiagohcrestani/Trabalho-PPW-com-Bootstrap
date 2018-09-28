@@ -14,7 +14,7 @@ mysql_select_db($base,$conexao);
 
 
 
-$sql_rel = "Select * from usuario";
+$sql_rel = "Select * from usuario order by nome_usuario";
 $r_sql_rel = mysql_query($sql_rel, $conexao);
 $n_sql_rel = mysql_num_rows($r_sql_rel);
 
