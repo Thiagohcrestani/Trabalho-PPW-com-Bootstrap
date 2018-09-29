@@ -1,31 +1,33 @@
-CREATE DATABASE  IF NOT EXISTS `projetoppw2` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `projetoppw2`;
--- MySQL dump 10.13  Distrib 5.6.13, for Win32 (x86)
+-- phpMyAdmin SQL Dump
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost    Database: projetoppw2
--- ------------------------------------------------------
--- Server version	5.5.55-log
+-- Host: 127.0.0.1
+-- Generation Time: 29-Set-2018 às 01:08
+-- Versão do servidor: 5.5.55-log
+-- PHP Version: 5.6.25
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Table structure for table `usuario`
+-- Database: `projetoppw2`
 --
 
-DROP TABLE IF EXISTS `usuario`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
+--
+
 CREATE TABLE `usuario` (
-  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
+  `id_usuario` int(11) NOT NULL,
   `nome_usuario` varchar(45) NOT NULL,
   `cpf_usuario` varchar(14) DEFAULT NULL,
   `rg_usuario` varchar(20) DEFAULT NULL,
@@ -35,31 +37,42 @@ CREATE TABLE `usuario` (
   `cep_usuario` varchar(10) DEFAULT NULL,
   `cidade_usuario` varchar(20) DEFAULT NULL,
   `uf_usuario` char(2) DEFAULT NULL,
+  `email_usuario` varchar(50) NOT NULL,
   `login_usuario` varchar(15) NOT NULL,
   `senha_usuario` varchar(32) NOT NULL,
   `nivel_usuario` int(11) NOT NULL,
-  `status_usuario` varchar(1) NOT NULL,
-  PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `status_usuario` varchar(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
-LOCK TABLES `usuario` WRITE;
-/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (22,'THIAGO HENRIQUE CRESTANI','09735756978','107187057','RUA THOMAS FLORES','833','CENTRO','85955000','MARIPA','PR','THIAGO','202cb962ac59075b964b07152d234b70',0,'A'),(23,'RENATO FIGUEIRA FRANCESCATTO','29170867852','261008316','RUA ORLANDO VILAS BOAS','1801','INTERLAGOS','85955000','PALOTINA','PR','RENATO','202cb962ac59075b964b07152d234b70',0,'A'),(31,'THALLYS EDUARDO CALORY','08559393978','107187057','RUA ALDIR PEDRON','11401','CENTRO','85950000','PALOTINA','PR','THALLYS','202cb962ac59075b964b07152d234b70',0,'A'),(32,'RICHELI KAPPES','07150909922','107187057','RUA THOMAS FLORES','1112','CENTRO','85955000','MARIPA','PR','RICHELI','202cb962ac59075b964b07152d234b70',0,'A'),(33,'MAIARA KORALEWSKI','07756019938','108851201','RUA FERNANDES VIEIRA','1043','CENTRO','85955000','MARIPA','PR','MAIARA','202cb962ac59075b964b07152d234b70',0,'A'),(34,'MARCIA RICHTER','03920195906','13516851212','RUA FERNANDES VIEIRA','1302','CENTRO','85955000','MARIPA','PR','MARCIA','202cb962ac59075b964b07152d234b70',0,'A'),(36,'CALORY SISTEMAS','08559393978','646465456','RUA ALDIR PEDRON','1403','CENTRO','85950000','PALOTINA','PR','CALORY','81dc9bdb52d04dc20036dbd8313ed055',3,'A');
-/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `cpf_usuario`, `rg_usuario`, `endereco_usuario`, `num_usuario`, `bairro_usuario`, `cep_usuario`, `cidade_usuario`, `uf_usuario`, `email_usuario`, `login_usuario`, `senha_usuario`, `nivel_usuario`, `status_usuario`) VALUES
+(23, 'RENATO FIGUEIRA FRANCESCATTO', '29170867852', '261008316', 'RUA ORLANDO VILAS BOAS', '1801', 'INTERLAGOS', '85955000', 'PALOTINA', 'PR', '', 'RENATO', '202cb962ac59075b964b07152d234b70', 0, 'A'),
+(31, 'THALLYS EDUARDO CALORY', '08559393978', '107187057', 'RUA ALDIR PEDRON', '11401', 'CENTRO', '85950000', 'PALOTINA', 'PR', 'thallyscalory@hotmail.com', 'THALLYS', 'a8b8831c72bbd0ad793d31117cdfb799', 0, 'A'),
+(36, 'CALORY SISTEMAS', '08559393978', '646465456', 'RUA ALDIR PEDRON', '1403', 'CENTRO', '85950000', 'PALOTINA', 'PR', '', 'CALORY', '81dc9bdb52d04dc20036dbd8313ed055', 3, 'A'),
+(39, 'Thiago Henrique Crestani', '09735756978', '107187057', 'Rua Thomas Flores', '833', 'Centro', '85955000', 'Maripá', 'PR', 'thiago_crestani@hotmail.com', 'Thiago', '827ccb0eea8a706c4c34a16891f84e7b', 0, 'A');
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id_usuario`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2018-09-24 18:07:31
