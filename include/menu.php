@@ -26,8 +26,9 @@
   </div>
   <span class="navbar-text">
 		<img src="img/usuariologado.png" width="25" height="25" alt="login">
-		<font size="" face="verdana" color="" align="right"><?php echo $_SESSION["calory_usuario"];?></font>
-		<button onclick="window.location.href='logoff.php'" class="btn btn-sm btn-outline-secondary" type="button">Sair</button>
+		<font size="" face="verdana" color="" align="right"><?php echo $_SESSION["calory_usuario"];?></font><br>
 		<button onclick="window.location.href='alteraSenhaMenu.php'" class="btn btn-sm btn-outline-secondary" type="button">Alterar Senha</button>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	
+		<button onclick="window.location.href='logoff.php'" class="btn btn-sm btn-outline-secondary" type="button">Sair</button>
 	</span>
 </nav>
